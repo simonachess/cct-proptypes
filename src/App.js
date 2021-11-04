@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Task from "./Task";
 
-function App() {
+const data = [
+  {
+    index: 1,
+    title: 'Build test task',
+    tasks:
+      [
+        'Create repository',
+        'Implement designs',
+        'Implement functionality',
+      ],
+  },
+  {
+    index: 2,
+    title: 'Submit your test task',
+    tasks:
+      [
+        'Open email client',
+        'Sent link with information to <a href=mailto:careers@cornercasetech.com>careers@cornercasetech.com</a>',
+      ],
+  },
+  {
+    index: 3,
+    title: 'Participate in tech interview',
+    tasks:
+      [
+        'Talk with HR',
+        'Talk with Tech team',
+      ],
+  },
+  {
+    index: 4,
+    title: 'Receive answer',
+    tasks:
+      [
+        'Receive answer',
+        'Start your IT career',
+      ],
+  }
+]
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>CCT Lab Process</h1>
+      {data.map((task, index) =>
+        <Task index={task.index} title={task.title} subtasks={task.tasks} key={index}/>
+      )}
     </div>
   );
 }
-
-export default App;
