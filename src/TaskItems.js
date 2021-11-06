@@ -4,9 +4,8 @@ import Radio from './Radio.svg';
 export default function TaskItems(props) {
 
     return (
-        <div>{props.handleShow}
+        <div className="tasks-container">{props.handleShow}
             <div className="all-tasks">
-                <h2> Hello </h2>
                 {props.subtasks.map((item, index) => {
                     return (
                         <div className="task-item" key={index}>
