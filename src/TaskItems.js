@@ -1,7 +1,8 @@
 import React from 'react';
 import Radio from './Radio.svg';
+import PropTypes from "prop-types";
 
-export default function TaskItems(props) {
+function TaskItems(props) {
 
     return (
         <div className="tasks-container">{props.handleShow}
@@ -20,3 +21,13 @@ export default function TaskItems(props) {
         </div>
     );
 }
+
+TaskItems.propTypes = {
+    handleShow: PropTypes.bool,
+    subtasks: PropTypes.arrayOf(PropTypes.string, PropTypes.array),
+    item: PropTypes.string,
+    index: PropTypes.number
+}
+
+
+export default TaskItems

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import TaskItems from "./TaskItems";
+import PropTypes from "prop-types";
 
-export default function Task(props) {
+function Task(props) {
 
     const [show, setshow] = useState(false);
 
@@ -16,3 +17,12 @@ export default function Task(props) {
         </div>
     )
 }
+
+Task.propTypes = {
+
+    index: PropTypes.number,
+    title: PropTypes.string,
+    subtasks: PropTypes.arrayOf(PropTypes.string, PropTypes.array),
+}
+
+export default Task
