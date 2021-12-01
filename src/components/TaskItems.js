@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function TaskItems(props) {
 
     return (
-        <div className="tasks-container">{props.handleShow}
+        <div className="tasks-container">
             <div className="all-tasks">
                 {props.subtasks.map((item, index) => {
                     return (
@@ -23,10 +23,10 @@ function TaskItems(props) {
 }
 
 TaskItems.propTypes = {
-    handleShow: PropTypes.bool,
     subtasks: PropTypes.arrayOf(PropTypes.string, PropTypes.array),
     item: PropTypes.string,
-    index: PropTypes.number
+    index: PropTypes.number,
+    Radio: PropTypes.string,
 }
 
 
